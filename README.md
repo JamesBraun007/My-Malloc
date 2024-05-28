@@ -10,10 +10,24 @@ MyMalloc is a custom implementation of the standard malloc() function found in t
 
 
 ## Build Instructions:
-After downloading the files in this repository to your personal computer, the project can be built by compiling all of the source code files in one simple step by using the included Makefile. In order to build the project properly, all of the files (including the Makefile) must be within the same directory.
-The git commands are included for my academic github, but can be omitted for other users. 
+After downloading the files in this repository to your personal computer, the project can be built by compiling the source code file (myMalloc.c) using gcc as follows: gcc myMalloc.c -o myMalloc. Once built, the functions in myMalloc.c can be utilized to allocate and deallocate 
+memory dynamically by the user. 
 
 
-## Run Instructions: 
-Once the project is built, the user can utilize MyShell as a bash clone by typing 'shell' in the terminal. Any operation that can be performed on the original bash can be performed with MyShell, including IO redirection, subshells, and more. There is also support for shell scripts that include while loops, for loops, 
-if-statements, environment variables, etc. 
+## Example Usage:
+Note: The mallocing() and freeing() functions are customs functions defined in testing.c. These are formatted in such a way to make debugging easier. 
+```
+#include "testing.h"
+
+int main() {
+  initialize_test(__FILE__);
+
+  void * ptr = mallocing(8, print_status, false);
+  void * ptr2 = mallocing(8, print_status, false);
+  freeing(ptr, 8, print_status, false);
+  freeing(ptr2, 8, print_status, false);
+
+  finalize_test();
+}
+```
+
