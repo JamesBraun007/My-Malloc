@@ -7,7 +7,6 @@
 #include <unistd.h>
 
 #include "myMalloc.h"
-#include "printing.h"
 
 /* Due to the way assert() prints error messges we use out own assert function
  * for deteminism when testing assertions
